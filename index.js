@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import studentRouter from './routes/studentsRouter.js';
 import userRouter from './routes/userRouter.js';
 import authenticateUser from './middlewares/authenticate.js';
 import productRouter from './routes/productRouter.js';
@@ -19,8 +18,6 @@ app.use(express.json());
 app.use("/users", userRouter);
 
 app.use(authenticateUser);
-
-app.use("/students", studentRouter);
 
 app.use("/products", productRouter);
 
